@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "LeetCode and ChatGPT Alert",
+    "version": "1.0",
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "scripting",
+      "storage"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html"
+      },
+    "content_scripts": [
+      {
+        "matches": ["*://chatgpt.com/*"],
+        "js": ["content.js"],
+        "run_at": "document_end"
+      }
+    ]
+  }
+  
